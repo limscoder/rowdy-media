@@ -1,131 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&family=Lato:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f5f5f5;
+:root {
+    --bg:           #08081A;
+    --bg-elevated:  #0F0F28;
+    --bg-card:      #131330;
+    --accent-pink:  #FF1A8C;
+    --accent-green: #39FF6B;
+    --accent-purple:#C030FF;
+    --accent-orange:#FF6B1A;
+    --text:         #F0F0FF;
+    --text-muted:   #7878AA;
+    --border:       rgba(255, 26, 140, 0.18);
+    --glow-pink:    0 0 30px rgba(255, 26, 140, 0.35);
+    --glow-green:   0 0 30px rgba(57, 255, 107, 0.35);
+    --glow-purple:  0 0 30px rgba(192, 48, 255, 0.35);
 }
 
-/* Navigation */
+body {
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+
+/* ── Navigation ── */
 nav {
-    background: #1a1a1a;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(8, 8, 26, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 2.5rem;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 nav a {
-    color: #fff;
+    color: var(--text-muted);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #4a9eff;
+    color: var(--accent-pink);
 }
 
-/* Hero Section */
+/* ── Hero ── */
 .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #fff;
-    padding: 4rem 2rem;
-    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.6rem;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 26, 140, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 85% 85%, rgba(57, 255, 107, 0.07) 0%, transparent 55%);
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3rem;
+/* Synthwave grid floor */
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    right: -20%;
+    height: 45%;
+    background-image:
+        linear-gradient(rgba(255, 26, 140, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 26, 140, 0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(50deg);
+    transform-origin: bottom;
+    pointer-events: none;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7.2rem;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: "Markazi Text", serif;
+    font-size: clamp(5.4rem, 10vw, 11rem);
     font-weight: 700;
+    line-height: 0.85;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+    color: var(--accent-pink);
+    text-shadow: var(--glow-pink);
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: var(--glow-green);
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 460px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.4rem;
+    background: var(--accent-pink);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    box-shadow: var(--glow-pink);
+    transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 26, 140, 0.6);
+}
+
+.hero-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Phone Frame ── */
+.phone-frame {
+    position: relative;
+    width: 260px;
+    height: 530px;
+    background: #08081E;
+    border-radius: 45px;
+    padding: 12px;
+    box-shadow:
+        0 0 0 1px rgba(255, 26, 140, 0.35),
+        0 0 60px rgba(255, 26, 140, 0.18),
+        0 50px 100px -20px rgba(0, 0, 0, 0.8);
+}
+
+.phone-frame.hero-phone {
+    width: 280px;
+    height: 570px;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 28px;
+    background: #08081E;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.phone-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── Feature Sections ── */
+.features-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-section {
+    padding: 7rem 3.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7.2rem;
+    align-items: center;
+}
+
+.feature-section.reverse {
+    direction: rtl;
+}
+
+.feature-section.reverse > * {
+    direction: ltr;
+}
+
+.feature-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-pink);
+    text-shadow: var(--glow-pink);
     margin-bottom: 1rem;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    font-weight: 300;
-    max-width: 800px;
-    margin: 0 auto;
+.feature-section.green .feature-label {
+    color: var(--accent-green);
+    text-shadow: var(--glow-green);
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
+.feature-section.purple .feature-label {
+    color: var(--accent-purple);
+    text-shadow: var(--glow-purple);
 }
 
-/* About Section */
-.about {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
-.about h2 {
-    font-size: 2rem;
+.feature-title {
+    font-family: "Markazi Text", serif;
+    font-size: clamp(3.2rem, 4vw, 5rem);
+    font-weight: 700;
+    line-height: 0.9;
+    color: var(--text);
     margin-bottom: 1.5rem;
-    color: #1a1a1a;
 }
 
-.about p {
+.feature-desc {
     font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
+    color: var(--text-muted);
+    line-height: 1.75;
 }
 
-/* Media Page */
-.app-description {
-    background: #fff;
-    padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.feature-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* ── Screenshots Section ── */
+.screenshots-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    font-family: "Markazi Text", serif;
+    font-size: clamp(3rem, 4vw, 4.5rem);
+    font-weight: 700;
+    color: var(--text);
     margin-bottom: 3rem;
 }
 
-.app-description h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1a1a1a;
-}
-
-.app-description h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
-}
-
-.app-description p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-/* Screenshots Grid */
 .screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
-    margin-top: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0.5rem;
 }
 
 .screenshot-item {
@@ -133,40 +300,57 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    width: 140px;
 }
 
 .screenshot-item img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    width: 140px;
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(255, 26, 140, 0.2),
+        0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 26, 140, 0.2);
 }
 
 .screenshot-caption {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 0.78rem;
+    color: var(--text-muted);
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
-/* Recipes Grid */
+/* ── Recipes Section ── */
+.recipes-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .recipes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .recipe-card {
-    background: #fff;
-    border-radius: 8px;
+    background: var(--bg-card);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .recipe-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--glow-pink);
+}
+
+.recipe-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
 }
 
 .recipe-card-content {
@@ -174,28 +358,24 @@ nav a:hover {
 }
 
 .recipe-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    font-family: "Markazi Text", serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+    color: var(--text);
 }
 
 .recipe-meta {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.recipe-meta span {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .recipe-card p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--text-muted);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -205,40 +385,99 @@ nav a:hover {
 }
 
 .recipe-section h4 {
-    font-size: 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-pink);
     margin-bottom: 0.5rem;
-    color: #1a1a1a;
 }
 
 .recipe-section ul,
 .recipe-section ol {
-    padding-left: 1.5rem;
-    color: #555;
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .recipe-section li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
 }
 
-/* Contact Page */
+/* ── Generic container (other pages) ── */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Generic page hero (non-apps pages) */
+.page-hero {
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, #1A0A2E 100%);
+    color: var(--text);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+    font-family: "Markazi Text", serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About section */
+.about {
+    background: var(--bg-elevated);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.about h2 {
+    font-family: "Markazi Text", serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+.about p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Contact page */
 .contact-container {
     max-width: 600px;
     margin: 0 auto;
-    background: #fff;
+    background: var(--bg-card);
     padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    border: 1px solid var(--border);
 }
 
 .contact-container h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
+    font-family: "Markazi Text", serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
 }
 
 .contact-container p {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.05rem;
+    color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
@@ -249,25 +488,31 @@ nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #333;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    transition: border-color 0.3s ease;
+    background: var(--bg-elevated);
+    color: var(--text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #4a9eff;
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 3px rgba(255, 26, 140, 0.15);
 }
 
 .form-group textarea {
@@ -276,53 +521,80 @@ nav a:hover {
 }
 
 button[type="submit"] {
-    background: #1a1a1a;
+    background: var(--accent-pink);
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1rem 2.4rem;
     border: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     cursor: pointer;
-    transition: background 0.3s ease;
+    box-shadow: var(--glow-pink);
+    transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background: #333;
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 26, 140, 0.6);
 }
 
-/* Footer */
+/* ── Footer ── */
 footer {
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
     text-align: center;
     padding: 2rem;
+    border-top: 1px solid var(--border);
     margin-top: 4rem;
 }
 
 footer p {
-    color: #ccc;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .hero-grid,
+    .feature-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
-    .hero p {
-        font-size: 1.2rem;
+    .hero {
+        padding: 4rem 2rem;
+        min-height: auto;
     }
 
+    .hero-image-wrapper {
+        order: -1;
+    }
+
+    .phone-frame.hero-phone {
+        width: 220px;
+        height: 450px;
+    }
+
+    .feature-section {
+        padding: 4rem 2rem;
+    }
+
+    .feature-section.reverse {
+        direction: ltr;
+    }
+
+    nav ul {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
     .recipes-grid {
         grid-template-columns: 1fr;
     }
 
-    nav ul {
-        gap: 1rem;
-    }
-
-    .container {
-        padding: 2rem 1rem;
+    .hero-title {
+        font-size: clamp(4rem, 18vw, 6rem);
     }
 }

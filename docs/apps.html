@@ -9,35 +9,80 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">About</a></li>
             <li><a href="apps.html">Apps</a></li>
-            <li><a href="media.html">Media</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">About</a></li>
         </ul>
     </nav>
 
-    <div class="hero">
-        <h1>Meal Maker 3000</h1>
-        <p>Your culinary companion</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p class="hero-subtitle">Recipes &amp; Grocery Lists</p>
+                <h1 class="hero-title">Meal<br><span>Maker</span><br>3000</h1>
+                <p class="hero-desc">Browse a curated recipe feed, generate custom recipes with the ingredients you have on hand, and track your grocery list &mdash; all in one place.</p>
+                <a href="#" class="hero-cta">&#x2665; Download on the App Store</a>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="phone-frame hero-phone">
+                    <div class="phone-notch"></div>
+                    <img src="screenshots/feed.png" alt="Meal Maker feed">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Discover -->
+    <div class="features-wrapper">
+        <section class="feature-section green">
+            <div class="feature-text">
+                <p class="feature-label">Discovery</p>
+                <h2 class="feature-title">Discover Your<br>Next Meal</h2>
+                <p class="feature-desc">Browse an endless feed of recipes tailored to your tastes. Filter by mood &mdash; Easy, Fresh, Healthy, Hearty, Spicy, or Sweet &mdash; and by category, including Quick and Simple, Vegetarian, Mains, Sides and Soups, Desserts, Breakfast, and Salads.</p>
+            </div>
+            <div class="feature-image-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <img src="screenshots/detail.png" alt="Recipe detail">
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature: Create -->
+        <section class="feature-section reverse">
+            <div class="feature-text">
+                <p class="feature-label">Recipe Assistant</p>
+                <h2 class="feature-title">Create New<br>Recipes</h2>
+                <p class="feature-desc">Can&rsquo;t find what you&rsquo;re craving? Describe it and let Meal Maker build the perfect recipe for you. Type a prompt like &ldquo;a quick weeknight pasta with mushrooms&rdquo; and get a complete recipe with ingredients and step-by-step instructions in seconds.</p>
+            </div>
+            <div class="feature-image-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <img src="screenshots/generating.png" alt="AI recipe generation">
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature: Shop -->
+        <section class="feature-section purple">
+            <div class="feature-text">
+                <p class="feature-label">Shopping</p>
+                <h2 class="feature-title">Shop Your<br>Recipes</h2>
+                <p class="feature-desc">Add recipes to your shopping list, check off the ingredients you need, and order everything with one tap via Instacart.</p>
+            </div>
+            <div class="feature-image-wrapper">
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+                    <img src="screenshots/shopping.png" alt="Shopping list">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="container">
-        <div class="app-description">
-            <h2>About Meal Maker</h2>
-            <p>Meal Maker is your personal recipe helper. Browse a curated recipe feed, generate custom recipes with the ingredients you have on hand, and track your grocery list — all in one place.</p>
-
-            <h3>DISCOVER YOUR NEXT MEAL</h3>
-            <p>Browse an endless feed of recipes tailored to your tastes. Filter by mood — Easy, Fresh, Healthy, Hearty, Spicy, or Sweet — and by category, including Quick and Simple, Vegetarian, Mains, Sides and Soups, Desserts, Breakfast, and Salads.</p>
-
-            <h3>CREATE NEW RECIPES</h3>
-            <p>Can't find what you're craving? Describe it and let Meal Maker build the perfect recipe for you. Type a prompt like "a quick weeknight pasta with mushrooms" and get a complete recipe with ingredients and step-by-step instructions in seconds. A great way to create recipes with what's in your pantry or what's on sale at the grocery store.</p>
-
-            <h3>SHOP YOUR RECIPES</h3>
-            <p>Add recipes to your shopping list, check off the ingredients you need, and order everything with one tap.</p>
-        </div>
-
-        <h2 style="margin-bottom: 2rem; color: #1a1a1a;">Screenshots</h2>
-
+    <!-- Screenshots -->
+    <section class="screenshots-section">
+        <h2 class="section-title">See It in Action</h2>
         <div class="screenshots-grid">
             <div class="screenshot-item">
                 <img src="screenshots/feed.png" alt="Recipe feed">
@@ -57,7 +102,7 @@
             </div>
             <div class="screenshot-item">
                 <img src="screenshots/generating.png" alt="Generating a recipe">
-                <p class="screenshot-caption">AI-powered recipe generation</p>
+                <p class="screenshot-caption">Assisted recipe generation</p>
             </div>
             <div class="screenshot-item">
                 <img src="screenshots/result.png" alt="AI recipe result">
@@ -69,7 +114,7 @@
             </div>
             <div class="screenshot-item">
                 <img src="screenshots/favorites.png" alt="Favorites">
-                <p class="screenshot-caption">Your recipe collection, always at hand</p>
+                <p class="screenshot-caption">Your recipe collection</p>
             </div>
             <div class="screenshot-item">
                 <img src="screenshots/myrecipes.png" alt="My recipes">
@@ -81,47 +126,52 @@
             </div>
             <div class="screenshot-item">
                 <img src="screenshots/loading.png" alt="Loading">
-                <p class="screenshot-caption">Always something new to discover</p>
+                <p class="screenshot-caption">Always something new</p>
             </div>
         </div>
+    </section>
 
-        <h2 style="margin-bottom: 2rem; color: #1a1a1a;">Featured Recipes</h2>
-
+    <!-- Featured Recipes -->
+    <section class="recipes-section">
+        <h2 class="section-title">Featured Recipes</h2>
         <div class="recipes-grid">
             <!-- Recipe 1 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/93e9515c_20260124_115308.png" alt="Honey-Glazed Roasted Carrots with Carrot-Top Gremolata">
                 <div class="recipe-card-content">
-                    <h3>Classic Margherita Pizza</h3>
+                    <h3>Honey-Glazed Roasted Carrots with Carrot-Top Gremolata</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 25 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 55 min</span>
+                        <span>🍽️ 8 servings</span>
                     </div>
-                    <p>
-                        A timeless Italian classic featuring fresh mozzarella, ripe tomatoes, and fragrant basil
-                        on a crispy homemade crust.
-                    </p>
+                    <p>Oven-roasted carrots are lacquered in a deep honey glaze that caramelizes the edges and brings out their natural sweetness, then finished with a herb-studded gremolata made from the feathery carrot tops to use every part of the vegetable. The contrast of sticky, slightly charred exterior and tender interior creates a satisfying texture, while the gremolata adds a fresh, herby counterpoint and visual lift. This is a simple, elegant side that doubles as a waste-conscious approach to garnish, and it adapts easily if you substitute parsley for the greens.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>1 lb pizza dough</li>
-                            <li>1 cup marinara sauce</li>
-                            <li>8 oz fresh mozzarella, sliced</li>
-                            <li>2 large tomatoes, sliced</li>
-                            <li>1/4 cup fresh basil leaves</li>
-                            <li>2 tbsp olive oil</li>
-                            <li>Salt and pepper to taste</li>
+                            <li>Carrots with tops, about 4 3/4–5 lb, trimmed and peeled, tops reserved</li>
+                            <li>Garlic, 2 small cloves, finely chopped</li>
+                            <li>Lemon zest, 1 tablespoon, finely grated</li>
+                            <li>Orange juice, 1/3 cup</li>
+                            <li>Lemon juice, 2 tablespoons</li>
+                            <li>Unsalted butter, 4 tablespoons, cut into small cubes</li>
+                            <li>Extra-virgin olive oil, 2 teaspoons</li>
+                            <li>Kosher salt</li>
+                            <li>Cayenne pepper, 1/8 teaspoon</li>
+                            <li>Dark honey, 1 tablespoon</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Preheat oven to 475°F and prepare a pizza stone or baking sheet</li>
-                            <li>Roll out pizza dough on a floured surface to desired thickness</li>
-                            <li>Spread marinara sauce evenly over the dough</li>
-                            <li>Arrange mozzarella and tomato slices on top</li>
-                            <li>Drizzle with olive oil and season with salt and pepper</li>
-                            <li>Bake for 12-15 minutes until crust is golden and cheese is bubbling</li>
-                            <li>Top with fresh basil leaves before serving</li>
+                            <li>Preheat oven to 425°F (220°C). Line a rimmed baking sheet with foil or parchment for easy cleanup.</li>
+                            <li>Separate carrot tops from roots. Trim, peel, and, if carrots are large, halve lengthwise to produce pieces of uniform thickness for even cooking. Wash carrot tops thoroughly in cold water and dry with a towel or spin in a salad spinner.</li>
+                            <li>Place carrots in a large bowl. Add 2 teaspoons extra-virgin olive oil and kosher salt to taste (about 1 teaspoon). Toss to coat evenly.</li>
+                            <li>Arrange carrots cut-side down in a single layer on the prepared baking sheet with space between pieces. Roast at 425°F (220°C) for 20–30 minutes, turning once halfway through, until fork-tender and edges are browned.</li>
+                            <li>While carrots roast, prepare gremolata: discard any coarse stems and finely chop carrot tops to yield about 1 cup packed. In a small bowl combine chopped tops, 2 finely chopped garlic cloves, 1 tablespoon lemon zest, 1 tablespoon lemon juice, and a pinch of kosher salt. Mix and hold at room temperature.</li>
+                            <li>Prepare glaze when carrots have 3–5 minutes remaining: in a small saucepan over medium heat combine 1/3 cup orange juice, the remaining 1 tablespoon lemon juice, 1 tablespoon dark honey, 4 tablespoons unsalted butter (cut into cubes), and 1/8 teaspoon cayenne. Bring to a low simmer and cook, stirring, 2–4 minutes until mixture is glossy and slightly thickened. Do not boil vigorously.</li>
+                            <li>When carrots are done roasting, transfer them to a large bowl or return to the warm baking sheet. Pour the warm glaze over carrots and toss gently to coat. For additional caramelization, spread glazed carrots on the baking sheet and roast at 450°F (230°C) for 3–5 minutes or place 4–6 inches under the broiler for 1–2 minutes; watch constantly to prevent burning.</li>
+                            <li>Transfer glazed carrots to a serving platter. Spoon gremolata over the carrots and serve immediately.</li>
+                            <li>Food safety and storage: cool to room temperature no longer than 2 hours, then refrigerate in an airtight container up to 4 days. Reheat to an internal temperature of 165°F (74°C) before serving. Wash hands and all produce before use and avoid cross-contamination with raw protein surfaces.</li>
                         </ol>
                     </div>
                 </div>
@@ -129,37 +179,45 @@
 
             <!-- Recipe 2 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/9b7c51e0_20260125_120016.png" alt="Smoky Roasted Eggplant Caponata with Olives &amp; Capers">
                 <div class="recipe-card-content">
-                    <h3>Honey Garlic Salmon</h3>
+                    <h3>Smoky Roasted Eggplant Caponata with Olives &amp; Capers</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 20 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 1 hr</span>
+                        <span>🍽️ 8 servings</span>
                     </div>
-                    <p>
-                        Pan-seared salmon fillets glazed with a sweet and savory honey garlic sauce that
-                        caramelizes beautifully.
-                    </p>
+                    <p>This caponata transforms roasted eggplant into a silky, sweet-and-sour relish studded with olives, capers and crisp celery; oven-roasting concentrates the eggplant’s flavor and adds a subtle smokiness that sets it apart. A quick sauté of onions with tomato sauce ties the components into a jammy, spoonable salad that actually improves after resting overnight. Versatile and punchy, it shines as a spread on bread or as a zesty counterpoint to roasted proteins.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>4 salmon fillets (6 oz each)</li>
-                            <li>1/4 cup honey</li>
-                            <li>3 cloves garlic, minced</li>
-                            <li>2 tbsp soy sauce</li>
-                            <li>1 tbsp olive oil</li>
-                            <li>1 tsp fresh ginger, grated</li>
-                            <li>Sesame seeds and green onions for garnish</li>
+                            <li>2 tablespoons chopped fresh flat-leaf parsley, for garnish</li>
+                            <li>1 1/2 pounds eggplant, cut into 1-inch pieces</li>
+                            <li>1 red onion, halved lengthwise and thinly sliced</li>
+                            <li>1 bunch celery hearts, sliced</li>
+                            <li>6 tablespoons extra-virgin olive oil, divided</li>
+                            <li>1 cup good-quality tomato sauce</li>
+                            <li>1/4 cup white wine vinegar</li>
+                            <li>Kosher salt</li>
+                            <li>1/4 cup capers, rinsed and drained</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1 tablespoon sugar, to taste</li>
+                            <li>1 cup green olives, pitted and torn into thirds</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Whisk together honey, garlic, soy sauce, and ginger in a small bowl</li>
-                            <li>Heat olive oil in a large skillet over medium-high heat</li>
-                            <li>Season salmon with salt and pepper, place skin-side up in the skillet</li>
-                            <li>Cook for 4-5 minutes, then flip and cook another 3 minutes</li>
-                            <li>Pour honey garlic sauce over salmon and cook for 2 more minutes</li>
-                            <li>Garnish with sesame seeds and green onions before serving</li>
+                            <li>Preheat oven to 425°F (220°C). Line a rimmed baking sheet with foil or parchment for easier cleanup.</li>
+                            <li>Wash hands and rinse eggplant, celery and parsley under cold running water. Pat vegetables dry.</li>
+                            <li>Toss eggplant pieces with 3 tablespoons olive oil, 1 teaspoon kosher salt and 1/4 teaspoon black pepper in a large bowl until evenly coated. Spread in a single layer on the prepared baking sheet.</li>
+                            <li>Roast eggplant 30–35 minutes, turning once halfway, until deeply browned and tender. Remove from oven and set aside.</li>
+                            <li>While eggplant roasts, heat the remaining 3 tablespoons olive oil in a large skillet over medium heat.</li>
+                            <li>Add sliced red onion to the skillet and sauté 6–8 minutes, stirring occasionally, until softened and translucent. Add sliced celery and cook 3–4 minutes more to slightly soften but retain some crunch.</li>
+                            <li>Stir in tomato sauce, white wine vinegar, capers, green olives and 1 tablespoon sugar. Bring to a simmer over medium-low heat, then reduce heat and simmer gently 6–8 minutes to reduce and meld flavors. Taste and adjust salt, pepper and sugar as needed.</li>
+                            <li>Add the roasted eggplant to the skillet and fold gently to combine. Simmer 3–5 minutes to warm through and allow flavors to integrate. Do not over-stir to avoid breaking down the eggplant completely.</li>
+                            <li>Transfer caponata to a shallow container and let cool at room temperature no longer than 2 hours total. Garnish with chopped parsley before serving or reserve parsley for final garnish.</li>
+                            <li>Refrigerate covered at 40°F (4°C) or below. Chill at least 2 hours (overnight preferred) before serving for best flavor. Store in refrigerator up to 4–5 days.</li>
+                            <li>If serving warm, reheat gently to an internal temperature of 165°F (74°C) before serving. Discard if left at room temperature more than 2 hours.</li>
                         </ol>
                     </div>
                 </div>
@@ -167,39 +225,40 @@
 
             <!-- Recipe 3 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/0796150f_20260208_140140.png" alt="Crisped Roasted Sunchokes with Herb‑Anchovy Salsa Verde">
                 <div class="recipe-card-content">
-                    <h3>Mediterranean Quinoa Bowl</h3>
+                    <h3>Crisped Roasted Sunchokes with Herb‑Anchovy Salsa Verde</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 30 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 50 min</span>
+                        <span>🍽️ 6 servings</span>
                     </div>
-                    <p>
-                        A vibrant, healthy bowl packed with quinoa, roasted vegetables, chickpeas, and a
-                        creamy tahini dressing.
-                    </p>
+                    <p>Crunchy, caramelized sunchoke chunks are oven‑roasted with whole garlic until tender and edged with golden crispness, then finished with a vibrant herb‑anchovy salsa verde. The salsa—an oil‑based puree of parsley, capers, garlic and lemon with an umami wink from anchovies—adds saline, herbal lift that cuts through the roasted richness. Hands‑on time is minimal: scrub and chop the tubers, roast, and pulse the salsa in a food processor for a quick, high‑impact condiment. Served warm with spoonfuls of salsa, the dish highlights a satisfying contrast of nutty roast textures and punchy, savory sauce.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>1 1/2 cups quinoa</li>
-                            <li>1 can (15 oz) chickpeas, drained</li>
-                            <li>1 red bell pepper, diced</li>
-                            <li>1 zucchini, sliced</li>
-                            <li>1 cup cherry tomatoes, halved</li>
-                            <li>1/2 cup cucumber, diced</li>
-                            <li>1/4 cup tahini</li>
-                            <li>2 tbsp lemon juice</li>
-                            <li>Olive oil, salt, and spices to taste</li>
+                            <li>4 oil-packed anchovies, chopped</li>
+                            <li>1 1/2 pounds sunchokes, scrubbed very well, and cut into even size 1/2- to 1-inch chunks</li>
+                            <li>2 cloves garlic, peeled</li>
+                            <li>5 cloves garlic, peeled</li>
+                            <li>1/2 lemon, juiced</li>
+                            <li>2/3 cup parsley, roughly chopped (about 1 small bunch)</li>
+                            <li>1 cup extra-virgin olive oil</li>
+                            <li>1/4 cup olive oil</li>
+                            <li>2 tablespoons capers, drained</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Cook quinoa according to package directions</li>
-                            <li>Roast chickpeas, bell pepper, and zucchini at 400°F for 20 minutes</li>
-                            <li>Prepare tahini dressing by mixing tahini, lemon juice, and water</li>
-                            <li>Divide quinoa among bowls</li>
-                            <li>Top with roasted vegetables, chickpeas, tomatoes, and cucumber</li>
-                            <li>Drizzle with tahini dressing and serve</li>
+                            <li>Preheat oven to 425°F (220°C). Position rack in middle of oven. Wash hands and scrub sunchokes under running water to remove soil; trim any blemishes.</li>
+                            <li>On a rimmed baking sheet, toss sunchoke chunks with 1/4 cup olive oil, 3/4–1 teaspoon kosher salt and 1/2 teaspoon freshly ground black pepper. Spread in a single layer with space between pieces. Scatter 5 peeled whole garlic cloves among sunchokes.</li>
+                            <li>Roast in preheated oven 30–40 minutes, turning pieces once at 15–20 minutes, until edges are golden-brown and pieces are fork-tender. Remove from oven and let rest 3–5 minutes.</li>
+                            <li>While sunchokes roast, prepare salsa verde: in a food processor combine 4 chopped anchovies, 2 garlic cloves, 2/3 cup roughly chopped parsley, 2 tablespoons drained capers and juice of 1/2 lemon. Pulse to combine.</li>
+                            <li>With processor running, stream in 1 cup extra-virgin olive oil until a coarse emulsion forms (about 15–30 seconds total pulsing). Stop and scrape down sides as needed. Season to taste with kosher salt and freshly ground black pepper (start with 1/4 teaspoon salt and adjust). If salsa is too thick, add up to 1 tablespoon water or oil and pulse once.</li>
+                            <li>Transfer roasted sunchokes and any roasted garlic from baking sheet to a serving dish. Optionally squeeze the softened roasted garlic out of skins and mix into the sunchokes or leave cloves whole. Spoon salsa verde over warm sunchokes and serve immediately.</li>
+                            <li>Food safety and storage: refrigerate leftovers in an airtight container within 2 hours; store up to 3–4 days. Reheat in a 400°F (205°C) oven 8–10 minutes to re-crisp. Wash hands and utensils after handling anchovies and raw garlic.</li>
                         </ol>
                     </div>
                 </div>
@@ -207,39 +266,41 @@
 
             <!-- Recipe 4 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/3735fcfa_20260206_215750.png" alt="Tangy, Spiced No-Cook BBQ Sauce">
                 <div class="recipe-card-content">
-                    <h3>Creamy Tuscan Chicken</h3>
+                    <h3>Tangy, Spiced No-Cook BBQ Sauce</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 35 minutes</span>
-                        <span>🍽️ Serves 6</span>
+                        <span>⏱️ 5 min</span>
+                        <span>🍽️ 5 servings</span>
                     </div>
-                    <p>
-                        Tender chicken breasts in a rich, creamy sauce with sun-dried tomatoes, spinach, and
-                        Italian herbs.
-                    </p>
+                    <p>This quick, no-heat sauce delivers a bold balance of tang and spice with a distinctive sandy texture that sets it apart from smoother, cooked barbecue sauces. Vinegar and lemon juice give it sharp acidity while chili powder and cayenne provide layered heat, and a scattering of celery seeds adds an aromatic, peppery lift. Because the sugar isn&#x27;t dissolved by cooking, the mixture retains a pleasing grit at first, mellowing over time if you let it rest. Ready in minutes and versatile enough for smoked beef or grilled sandwiches, it’s an easy way to add punchy, old-school character to grilled dishes.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>6 boneless chicken breasts</li>
-                            <li>1 cup heavy cream</li>
-                            <li>1/2 cup chicken broth</li>
-                            <li>1/2 cup sun-dried tomatoes, chopped</li>
-                            <li>3 cups fresh spinach</li>
-                            <li>1/2 cup parmesan cheese, grated</li>
-                            <li>4 cloves garlic, minced</li>
-                            <li>Italian seasoning, salt, and pepper</li>
+                            <li>2 teaspoons fresh lemon juice (from 1 lemon)</li>
+                            <li>0.5 cup apple cider vinegar</li>
+                            <li>2 cups ketchup</li>
+                            <li>1.5 teaspoons kosher salt</li>
+                            <li>0.25 cup granulated sugar</li>
+                            <li>1 teaspoon garlic powder</li>
+                            <li>1 teaspoon cayenne pepper</li>
+                            <li>1 tablespoon chili powder</li>
+                            <li>1 teaspoon celery seeds</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Season chicken with Italian seasoning, salt, and pepper</li>
-                            <li>Sear chicken in a large skillet until golden, about 5 minutes per side</li>
-                            <li>Remove chicken and set aside</li>
-                            <li>Add garlic to the pan and sauté for 1 minute</li>
-                            <li>Add cream, broth, sun-dried tomatoes, and bring to a simmer</li>
-                            <li>Stir in spinach and parmesan until wilted and melted</li>
-                            <li>Return chicken to pan and simmer for 5 more minutes</li>
+                            <li>Sanitize work area and utensils; wash hands for 20 seconds before handling ingredients.</li>
+                            <li>Measure all ingredients and place a medium mixing bowl on the scale or counter.</li>
+                            <li>Add ketchup, apple cider vinegar, and lemon juice to the bowl. Stir 30–60 seconds to combine evenly.</li>
+                            <li>Add granulated sugar and kosher salt. Whisk 60–90 seconds until uniformly distributed; note that sugar will remain slightly grainy (no heating required).</li>
+                            <li>Add garlic powder, chili powder, cayenne pepper, and celery seeds. Whisk 30–45 seconds until spices are evenly incorporated.</li>
+                            <li>Taste and adjust seasoning: add up to 1/4 teaspoon additional salt or 1/2 teaspoon sugar as needed; whisk 15–30 seconds after adjustments.</li>
+                            <li>Transfer sauce to a clean, airtight container. For best flavor, let rest at room temperature 30–60 minutes to allow acids and spices to meld. If left at room temperature, do not exceed 2 hours.</li>
+                            <li>Refrigerate immediately after resting (or immediately if not resting) at 40°F (4°C) or below. Chill at least 2 hours before serving for improved flavor and texture.</li>
+                            <li>Storage and safety: keep refrigerated in an airtight container up to 2 weeks. Always use a clean spoon to serve; discard if sauce develops off-odor, visible mold, or unusual color.</li>
+                            <li>Optional smoothing method (changes recipe from no-cook): gently warm sauce in a small saucepan over low heat until sugar dissolves, keeping temperature below 140°F (60°C); cool to 40°F (4°C) before refrigerating.</li>
                         </ol>
                     </div>
                 </div>
@@ -247,41 +308,46 @@
 
             <!-- Recipe 5 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/7c7bda81_20260125_120316.png" alt="Savory Peanut-Miso Pesto with Caramelized Squash Wedges">
                 <div class="recipe-card-content">
-                    <h3>Thai Basil Stir-Fry</h3>
+                    <h3>Savory Peanut-Miso Pesto with Caramelized Squash Wedges</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 15 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 30 min</span>
+                        <span>🍽️ 6 servings</span>
                     </div>
-                    <p>
-                        A quick and flavorful stir-fry with aromatic Thai basil, fresh vegetables, and your
-                        choice of protein.
-                    </p>
+                    <p>This dish pairs caramelized roasted acorn squash wedges with an unconventional collard-peanut pesto that layers savory miso and lemon for deep umami and nutty richness. Blanching the collards tames their bitterness and preserves the greens’ color while toasted peanuts add a slightly coarse, toasty texture to the sauce. To prepare, roast oiled squash at 450°F until deeply browned and tender, blanch and shock the collards, toast the peanuts, then pulse the greens, peanuts, miso, lemon and garlic in a food processor while streaming in olive oil to make a chunky, creamy pesto. Arrange the browned wedges on a platter, spoon the pesto over or alongside them, and finish with lemon zest and flaky sea salt before serving.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>1 lb chicken or tofu, sliced</li>
-                            <li>2 cups Thai basil leaves</li>
-                            <li>1 bell pepper, sliced</li>
-                            <li>1 onion, sliced</li>
-                            <li>3 Thai chilies, sliced</li>
-                            <li>3 tbsp soy sauce</li>
-                            <li>2 tbsp oyster sauce</li>
-                            <li>1 tbsp fish sauce</li>
-                            <li>2 cloves garlic, minced</li>
-                            <li>Jasmine rice for serving</li>
+                            <li>1/3 cup unsalted roasted peanuts</li>
+                            <li>2 cups loosely packed chopped collard greens, stems removed</li>
+                            <li>2 medium acorn squash, stemmed, halved lengthwise, seeded, and cut into 1-inch-thick crosswise half-moon slices</li>
+                            <li>1 teaspoon minced garlic</li>
+                            <li>1/4 teaspoon lemon zest and 3 1/2 teaspoons fresh lemon juice, divided</li>
+                            <li>3 tablespoons white miso paste</li>
+                            <li>Flaky sea salt to taste</li>
+                            <li>8 cups water</li>
+                            <li>1/2 cup plus 2 tablespoons olive oil, divided</li>
+                            <li>4 teaspoons kosher salt, divided</li>
+                            <li>1/2 teaspoon black pepper, divided</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Heat oil in a wok over high heat</li>
-                            <li>Stir-fry garlic and chilies for 30 seconds</li>
-                            <li>Add protein and cook until nearly done</li>
-                            <li>Add bell pepper and onion, stir-fry for 2 minutes</li>
-                            <li>Add soy sauce, oyster sauce, and fish sauce</li>
-                            <li>Toss in Thai basil and stir until wilted</li>
-                            <li>Serve immediately over jasmine rice</li>
+                            <li>Preheat oven to 450°F (230°C). Position rack in the center. Line a rimmed baking sheet with parchment or foil or lightly oil the sheet.</li>
+                            <li>Prepare squash: halve, seed and slice each squash into 1-inch-thick half-moons. Place slices in a single layer on the prepared sheet.</li>
+                            <li>Toss squash with 2 tablespoons olive oil, 1 teaspoon kosher salt and 1/4 teaspoon black pepper. Spread in one layer so slices do not overlap.</li>
+                            <li>Roast squash at 450°F for 25–30 minutes, turning once halfway (around 12–15 minutes), until edges are deeply browned and centers are tender. Remove from oven and let rest 5 minutes.</li>
+                            <li>While oven preheats, rinse collard greens under cold running water to remove grit, drain, remove stems and chop into 1–2 inch pieces.</li>
+                            <li>Bring 8 cups water to a rolling boil in a large pot. Add collards and blanch 60–90 seconds until bright green and tender-crisp.</li>
+                            <li>Immediately transfer collards to an ice bath to stop cooking. Shock 1–2 minutes, then drain and press or squeeze excess water from the greens using a clean towel or fine mesh sieve.</li>
+                            <li>Toast peanuts in a dry skillet over medium heat 3–4 minutes, stirring constantly, until aromatic and lightly darkened; remove to a plate and cool.</li>
+                            <li>Make pesto: in a food processor combine blanched collards, toasted peanuts, 3 tablespoons miso paste, 1 teaspoon minced garlic, 1/4 teaspoon lemon zest, 3 teaspoons fresh lemon juice, 3 teaspoons kosher salt and 1/4 teaspoon black pepper.</li>
+                            <li>Pulse while streaming in 1/2 cup olive oil until a coarse, spreadable pesto forms. Scrape sides and pulse as needed; texture should be chunky but cohesive.</li>
+                            <li>Taste and adjust: add remaining 2 tablespoons olive oil and remaining 1/2 teaspoon fresh lemon juice if needed for texture and brightness; adjust seasoning with remaining 0 teaspoons kosher salt and 1/4 teaspoon black pepper as required (total salt used for pesto = 3 teaspoons).</li>
+                            <li>Arrange roasted squash wedges on a platter. Spoon or dollop the pesto alongside and over wedges. Finish with reserved 1/4 teaspoon lemon zest, flaky sea salt to taste, and a light pinch of cracked black pepper if desired.</li>
+                            <li>Food safety and storage: cool leftovers to room temperature no longer than 2 hours, then refrigerate in a sealed container at 40°F (4°C) or below and use within 3–4 days. Reheat squash to 165°F (74°C) before serving. Use clean utensils and separate cutting boards to avoid cross-contamination when prepping other foods.</li>
                         </ol>
                     </div>
                 </div>
@@ -289,41 +355,43 @@
 
             <!-- Recipe 6 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/8eda3552_20260124_132058.png" alt="Smoky Cabbage Slaw with Browned-Butter Hazelnut Vinaigrette">
                 <div class="recipe-card-content">
-                    <h3>Chocolate Lava Cakes</h3>
+                    <h3>Smoky Cabbage Slaw with Browned-Butter Hazelnut Vinaigrette</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 25 minutes</span>
-                        <span>🍽️ Serves 6</span>
+                        <span>⏱️ 1 hr 15 min</span>
+                        <span>🍽️ 8 servings</span>
                     </div>
-                    <p>
-                        Decadent individual chocolate cakes with a molten center that flows out when you cut
-                        into them.
-                    </p>
+                    <p>This inventive slaw turns the cabbage itself into the dressing: smoked edges are puréed and reduced to a concentrated vinaigrette, then enriched with browned butter and a splash of mirin for savory-sweet depth. Thinly sliced raw cabbage is quickly macerated with lemon, tossed with fresh mint and tarragon, and finished with toasted hazelnuts for a satisfying crunch. The standout technique—extracting and reducing charred cabbage juice—gives the salad an unexpected caramelized complexity that elevates a simple slaw into a memorable all-season side. It’s a study in texture and umami, pairing crispness, herbal lift, and nutty richness in each bite.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>6 oz dark chocolate, chopped</li>
-                            <li>1/2 cup unsalted butter</li>
-                            <li>2 large eggs</li>
-                            <li>2 egg yolks</li>
-                            <li>1/4 cup sugar</li>
-                            <li>2 tbsp all-purpose flour</li>
-                            <li>Pinch of salt</li>
-                            <li>Butter and cocoa powder for ramekins</li>
-                            <li>Vanilla ice cream for serving</li>
+                            <li>2 medium heads green cabbage, cored and quartered</li>
+                            <li>1 lemon, juiced</li>
+                            <li>2 tbsp packed tarragon leaves, torn</li>
+                            <li>6 tbsp packed small mint leaves, torn</li>
+                            <li>2 tbsp champagne vinegar</li>
+                            <li>1 tbsp mirin</li>
+                            <li>1/4 cup hazelnuts, whole</li>
+                            <li>Kosher salt</li>
+                            <li>2 tbsp unsalted butter</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Preheat oven to 425°F and prepare 6 ramekins with butter and cocoa powder</li>
-                            <li>Melt chocolate and butter together until smooth</li>
-                            <li>Whisk eggs, egg yolks, and sugar until thick and pale</li>
-                            <li>Fold chocolate mixture into eggs</li>
-                            <li>Gently fold in flour and salt</li>
-                            <li>Divide batter among ramekins</li>
-                            <li>Bake for 12-14 minutes until edges are set but center jiggles</li>
-                            <li>Let cool for 1 minute, invert onto plates, and serve with ice cream</li>
+                            <li>Wash all cabbage and herb leaves under cold running water; pat dry. Preheat oven to 350°F (177°C) for toasting hazelnuts and position a second rack 4–6 in (10–15 cm) below the broiler element for charring.</li>
+                            <li>Separate cabbage: reserve one whole head (or half total cabbage volume) for raw shredding; use the remaining head for charring. Keep cores removed from both sets.</li>
+                            <li>Toast hazelnuts: spread hazelnuts in a single layer on a small rimmed baking sheet. Toast at 350°F (177°C) 8–10 minutes until fragrant and skins blister; cool 5 minutes. Rub skins off between a towel if desired, then coarsely chop. Set aside.</li>
+                            <li>Char cabbage for vinaigrette: place quarters from the char reserved cabbage on a rimmed sheet pan cut-side down. Broil on HIGH with rack 4–6 in (10–15 cm) from element, 3–5 minutes per side, turning as needed, until edges are blackened and soft (about 8–12 minutes total). Remove and let cool 5 minutes.</li>
+                            <li>Purée charred cabbage: transfer charred cabbage (including some browned/blackened edges) to a blender or food processor. Add juice of half the lemon (reserve remaining juice for raw cabbage), 2 tbsp champagne vinegar, 1 tbsp mirin and 1/2 tsp kosher salt. Purée until smooth, 30–60 seconds. Optional: strain through a fine-mesh sieve to remove large char fragments.</li>
+                            <li>Reduce purée to vinaigrette: transfer purée to a small saucepan and bring to a low simmer over medium heat. Reduce until volume is reduced by about half and texture is syrupy, 8–12 minutes, stirring and skimming foam. Maintain a gentle simmer to ensure safe heating (above 185°F). Remove from heat and keep warm.</li>
+                            <li>Brown butter: in a separate small skillet over medium heat melt 2 tbsp unsalted butter. Cook, swirling pan, until milk solids turn amber and aroma is nutty, 3–4 minutes. Remove pan from heat immediately to prevent burning.</li>
+                            <li>Combine vinaigrette: slowly whisk browned butter into the warm reduced cabbage purée in two additions until emulsified. Taste and adjust seasoning with up to 1/2 tsp kosher salt and the remaining lemon juice if needed. Keep warm or let cool to room temperature (no longer than 2 hours before refrigerating).</li>
+                            <li>Shred raw cabbage: very thinly slice reserved cabbage head(s) into 1/8&quot; (3 mm) shreds using a sharp knife or mandoline. Place shredded cabbage in a large bowl.</li>
+                            <li>Macerate cabbage and herbs: immediately toss shredded cabbage with reserved lemon juice and a pinch (about 1/2 tsp) kosher salt. Let rest 5–10 minutes to soften. Add 2 tbsp torn tarragon and 6 tbsp torn mint; toss to distribute.</li>
+                            <li>Dress and finish: add 3–4 tbsp of the warm vinaigrette to the cabbage and toss to coat. Taste and add additional vinaigrette as needed (total yield typically 1/3–1/2 cup). Fold in most of the chopped toasted hazelnuts, reserving some for garnish.</li>
+                            <li>Serve and store: transfer to a serving platter, garnish with remaining hazelnuts and additional herbs. Serve at room temperature. Refrigerate any leftover vinaigrette and salad within 2 hours in shallow airtight containers; consume vinaigrette within 4–5 days and salad within 24–48 hours for best texture.</li>
                         </ol>
                     </div>
                 </div>
@@ -331,41 +399,42 @@
 
             <!-- Recipe 7 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/1bf8f98a_20260125_120631.png" alt="Savory Pan-Fried Tofu Paneer-Style Cubes">
                 <div class="recipe-card-content">
-                    <h3>Avocado Toast Deluxe</h3>
+                    <h3>Savory Pan-Fried Tofu Paneer-Style Cubes</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 10 minutes</span>
-                        <span>🍽️ Serves 2</span>
+                        <span>⏱️ 28 min</span>
+                        <span>🍽️ 4 servings</span>
                     </div>
-                    <p>
-                        Elevated avocado toast with perfectly poached eggs, cherry tomatoes, and everything
-                        bagel seasoning.
-                    </p>
+                    <p>This vegan paneer substitute turns well-pressed firm tofu into cheese-like cubes by soaking it in a savory mix of nutritional yeast, Dijon mustard, onion and garlic powders, salt and a hint of curry. After a short chill the marinated cubes are pan-fried until golden with slightly crisp edges while remaining tender inside, giving a satisfyingly chewy, curd-like texture. The recipe stands out for delivering paneer’s mellow, savory character without dairy and in under 30 minutes using simple pantry ingredients, making it an adaptable swap for curries, grills or salads. To make it, whisk the seasonings with a little water, toss with cubed tofu, refrigerate at least 20 minutes, then fry 3–4 minutes per side and drain on paper towels.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>2 ripe avocados</li>
-                            <li>4 slices sourdough bread</li>
-                            <li>4 eggs</li>
-                            <li>1 cup cherry tomatoes, halved</li>
-                            <li>2 tbsp lemon juice</li>
-                            <li>Everything bagel seasoning</li>
-                            <li>Red pepper flakes</li>
-                            <li>Olive oil</li>
-                            <li>Salt and pepper to taste</li>
+                            <li>1 block firm or extra-firm tofu, pressed and cut into 1-inch cubes</li>
+                            <li>1 tsp Dijon or whole-grain mustard</li>
+                            <li>1/4 tsp salt</li>
+                            <li>1/4 tsp curry powder</li>
+                            <li>1/2 tsp garlic powder</li>
+                            <li>3/4 tsp onion powder</li>
+                            <li>2 tbsp oil</li>
+                            <li>1 tbsp nutritional yeast</li>
+                            <li>2 tbsp water</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Toast sourdough bread until golden and crispy</li>
-                            <li>Mash avocados with lemon juice, salt, and pepper</li>
-                            <li>Poach eggs in simmering water with a splash of vinegar</li>
-                            <li>Spread avocado mixture generously on toast</li>
-                            <li>Top with cherry tomatoes</li>
-                            <li>Place poached egg on top</li>
-                            <li>Sprinkle with everything bagel seasoning and red pepper flakes</li>
-                            <li>Drizzle with olive oil and serve immediately</li>
+                            <li>If tofu is not fully pressed, wrap block in paper towels and place a weight on top for 15–30 minutes; then cut into 1-inch cubes.</li>
+                            <li>Pat tofu cubes dry with paper towels to remove surface moisture for better seasoning adhesion.</li>
+                            <li>In a bowl whisk together 1 tsp Dijon mustard, 1/4 tsp salt, 1/4 tsp curry powder, 1/2 tsp garlic powder, 3/4 tsp onion powder, 1 tbsp nutritional yeast and 2 tbsp water until uniform.</li>
+                            <li>Add tofu cubes to the seasoning mixture and toss gently to coat all surfaces without breaking the cubes.</li>
+                            <li>Cover and refrigerate the coated tofu at 40°F (4°C) or below for at least 20 minutes and up to 2 hours. Do not marinate at room temperature.</li>
+                            <li>Heat a large nonstick or cast-iron skillet over medium-high heat (surface ~375°F / 190°C). Add 2 tbsp oil and heat until shimmering but not smoking (30–60 seconds).</li>
+                            <li>Arrange tofu cubes in a single layer in the skillet without overcrowding; work in batches if necessary.</li>
+                            <li>Pan-fry each side 3–4 minutes, turning with tongs or a spatula, until all visible sides are golden-brown with slightly crisped edges. Total frying time per cube ~6–12 minutes depending on browning.</li>
+                            <li>Transfer fried tofu to a paper-towel-lined plate and let drain 1–2 minutes.</li>
+                            <li>Serve immediately or cool and refrigerate within 2 hours in an airtight container for up to 4 days. Reheat in a skillet over medium heat or in a 400°F (200°C) oven 6–8 minutes to re-crisp.</li>
+                            <li>Food safety: wash hands and surfaces after handling raw tofu. Keep marinating tofu refrigerated. Discard marinade that contacted raw tofu if not cooked.</li>
                         </ol>
                     </div>
                 </div>
@@ -373,40 +442,40 @@
 
             <!-- Recipe 8 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/932ff34a_20260125_120934.png" alt="Festive Cranberry Fluff with Pecans and Grapes">
                 <div class="recipe-card-content">
-                    <h3>Beef Tacos with Homemade Salsa</h3>
+                    <h3>Festive Cranberry Fluff with Pecans and Grapes</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 30 minutes</span>
-                        <span>🍽️ Serves 6</span>
+                        <span>⏱️ 4 hr 15 min</span>
+                        <span>🍽️ 8 servings</span>
                     </div>
-                    <p>
-                        Authentic street-style tacos with seasoned ground beef, fresh vegetables, and a
-                        vibrant homemade salsa.
-                    </p>
+                    <p>This no‑bake cranberry fluff combines pulsed cranberries and sugar with pillowy mini marshmallows and a whipped cream‑cheese mixture for a nostalgic, airy side dish that stands out for its mix of textures. Preparation is simple: pulse the cranberries, stir in sugar and marshmallows and chill, beat cream cheese with heavy cream to soft peaks, then fold everything together with toasted pecans and halved grapes before chilling to set. The interplay of saucy fruit, crunchy nuts, and juicy grapes gives each spoonful a surprising contrast, and the recipe can be made a day ahead to streamline holiday service. It’s an easy, crowd-pleasing addition to a festive menu that feels both retro and refreshing.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>1 lb ground beef</li>
-                            <li>12 corn tortillas</li>
-                            <li>1 onion, diced</li>
-                            <li>3 tomatoes, diced</li>
-                            <li>1 jalapeño, minced</li>
-                            <li>1/4 cup cilantro, chopped</li>
-                            <li>2 limes</li>
-                            <li>Taco seasoning</li>
-                            <li>Lettuce, cheese, and sour cream for topping</li>
+                            <li>1 cup red seedless grapes, halved</li>
+                            <li>12 ounces fresh or thawed cranberries (about 4 cups)</li>
+                            <li>3 cups miniature marshmallows (from a 10-oz package)</li>
+                            <li>1 cup chopped toasted pecans</li>
+                            <li>3/4 cup granulated sugar</li>
+                            <li>1/4 teaspoon kosher salt</li>
+                            <li>4 ounces cream cheese, softened</li>
+                            <li>2 cups heavy whipping cream</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Make salsa by combining tomatoes, half the onion, jalapeño, cilantro, and lime juice</li>
-                            <li>Brown ground beef with remaining onion in a large skillet</li>
-                            <li>Add taco seasoning and water, simmer until thickened</li>
-                            <li>Warm tortillas in a dry skillet or over a flame</li>
-                            <li>Fill tortillas with beef mixture</li>
-                            <li>Top with lettuce, cheese, sour cream, and fresh salsa</li>
-                            <li>Serve with lime wedges</li>
+                            <li>If pecans are not already toasted: preheat oven to 350°F (175°C). Spread 1 cup pecans on a baking sheet and toast 6–8 minutes, stirring once; cool and chop. (If pecans are already toasted and chopped, skip.)</li>
+                            <li>Rinse grapes under running water, drain, halve, and pat dry. Keep refrigerated until assembly.</li>
+                            <li>If using frozen cranberries, thaw in the refrigerator overnight before use.</li>
+                            <li>Place cranberries in a food processor. Pulse 8–12 times (about 10–15 seconds total) until coarsely chopped and saucy; avoid continuous processing to prevent pureeing. Transfer cranberry mixture to a medium bowl.</li>
+                            <li>Add 3/4 cup granulated sugar and 1/4 teaspoon kosher salt to the cranberry mixture; stir 1–2 minutes until sugar begins to dissolve. Fold in 3 cups miniature marshmallows, cover, and refrigerate at 40°F (4°C) or below for 30 minutes to soften marshmallows and allow flavors to meld.</li>
+                            <li>Soften 4 ounces cream cheese: leave at room temperature up to 30 minutes (no longer than 2 hours) or warm in 10-second microwave increments until pliable. Place cream cheese in a mixing bowl and beat at medium speed 1–2 minutes until smooth and lump-free.</li>
+                            <li>With the mixer running, add 2 cups heavy whipping cream and increase to medium-high speed. Whip 2–4 minutes until soft peaks form (stop when peaks hold but tips curl).</li>
+                            <li>Remove the cranberry-marshmallow mixture from the refrigerator. Fold the cranberry mixture into the whipped cream-cheese in three additions, folding gently to retain air. Add toasted chopped pecans and halved grapes and fold until evenly distributed.</li>
+                            <li>Transfer the mixture to a covered serving bowl. Chill in the refrigerator at 40°F (4°C) or below for 2–4 hours or overnight to set.</li>
+                            <li>Food safety and storage: keep chilled at ≤40°F (4°C). Discard if left at room temperature more than 2 hours (1 hour if ambient temperature &gt;90°F/32°C). Store covered in the refrigerator up to 3 days; use clean utensils to serve.</li>
                         </ol>
                     </div>
                 </div>
@@ -414,35 +483,41 @@
 
             <!-- Recipe 9 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/09bb4ca8_20260124_132334.png" alt="Zesty Ginger-Pickled Beets">
                 <div class="recipe-card-content">
-                    <h3>Caprese Salad</h3>
+                    <h3>Zesty Ginger-Pickled Beets</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 10 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 1 hr 25 min</span>
+                        <span>🍽️ 4 servings</span>
                     </div>
-                    <p>
-                        A simple yet elegant Italian salad featuring ripe tomatoes, fresh mozzarella, and
-                        basil with balsamic glaze.
-                    </p>
+                    <p>This quick-pickle recipe highlights steamed beets tossed with chunky fresh ginger and thinly sliced raw onion for a satisfying mix of tender and crisp textures. A simple sweet-and-tangy brine of apple cider vinegar, water, a touch of sugar, dill and dried mustard infuses the beets during a short room-temperature soak so the flavors develop fast without lengthy canning. Steaming the beets softens them while preserving their deep purple hue, and the ginger adds warming, peppery notes that lift the dish. Serve chilled as a colorful, low-effort side that balances sweet, sour and zesty flavors.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>4 large tomatoes, sliced</li>
-                            <li>16 oz fresh mozzarella, sliced</li>
-                            <li>1 cup fresh basil leaves</li>
-                            <li>1/4 cup extra virgin olive oil</li>
-                            <li>3 tbsp balsamic glaze</li>
-                            <li>Sea salt and black pepper</li>
+                            <li>1 bunch red beets</li>
+                            <li>1 tablespoon fresh or dried dill weed</li>
+                            <li>¼ cup ginger, cut into small cubes</li>
+                            <li>1 small white onion</li>
+                            <li>¼ cup apple cider vinegar</li>
+                            <li>1 teaspoon salt</li>
+                            <li>2 cups water</li>
+                            <li>1 tablespoon sugar</li>
+                            <li>1 teaspoon dried mustard</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Arrange tomato and mozzarella slices alternating on a platter</li>
-                            <li>Tuck basil leaves between slices</li>
-                            <li>Drizzle with olive oil and balsamic glaze</li>
-                            <li>Season with sea salt and freshly cracked black pepper</li>
-                            <li>Let sit for 5 minutes before serving to allow flavors to meld</li>
+                            <li>Sanitize work surface and utensils. Wash beets under running water; trim greens to 1/2 inch and scrub skins to remove soil.</li>
+                            <li>Place beets in a steam basket over boiling water (100°C). Cover and steam until fork-tender: small beets 25–30 minutes, medium 30–40 minutes. Check by inserting a paring knife to center.</li>
+                            <li>While beets steam, peel and thinly slice the onion; dice ginger to small 1/4-inch cubes; measure dill, salt, sugar, dried mustard, vinegar and water.</li>
+                            <li>Remove steamed beets and cool 10–15 minutes until safe to handle. Remove skins by rubbing with a paper towel or under cold running water. Use disposable or dedicated towels to avoid staining hands and surfaces.</li>
+                            <li>Cut peeled beets into wedges or 1-inch chunks and place in a clean, non-reactive bowl or jar.</li>
+                            <li>Make brine: combine apple cider vinegar, 2 cups water, sugar, salt, dried mustard and dill in a small saucepan. Heat over medium-high until mixture reaches a rolling boil and sugar/salt dissolve; simmer 1–2 minutes, then remove from heat.</li>
+                            <li>Cool brine to room temperature (about 20–30 minutes). Do not add hot brine to raw onion or fresh ginger if you want to preserve crisp texture.</li>
+                            <li>Combine beets, diced ginger and sliced onion in the bowl or jar. Pour cooled brine over vegetables until fully submerged; press down with a clean utensil to remove air pockets.</li>
+                            <li>Let mixture stand at room temperature 30–60 minutes to infuse flavors. After infusion, cover and refrigerate within 2 hours (1 hour if ambient temperature exceeds 32°C / 90°F). Refrigerate at 4°C (40°F) or below.</li>
+                            <li>Chill at least 1 hour before serving. Store refrigerated in a sealed container and consume within 7–10 days. Discard immediately if off-odor, visible mold, or sliminess develops.</li>
                         </ol>
                     </div>
                 </div>
@@ -450,46 +525,55 @@
 
             <!-- Recipe 10 -->
             <div class="recipe-card">
+                <img class="recipe-card-img" src="https://meal-maker-3000.s3.us-east-2.amazonaws.com/recipes/d3b7351a_20260208_140420.png" alt="Ultimate Hearty Minestrone Stew">
                 <div class="recipe-card-content">
-                    <h3>Vegetable Pad Thai</h3>
+                    <h3>Ultimate Hearty Minestrone Stew</h3>
                     <div class="recipe-meta">
-                        <span>⏱️ 25 minutes</span>
-                        <span>🍽️ Serves 4</span>
+                        <span>⏱️ 1 hr</span>
+                        <span>🍽️ 8 servings</span>
                     </div>
-                    <p>
-                        A vegetarian twist on the classic Thai noodle dish with a perfect balance of sweet,
-                        sour, and savory flavors.
-                    </p>
+                    <p>This minestrone turns pantry staples into a satisfying, vegetable-forward meal by using rendered cured pork to deepen the base and layering beans and small pasta so each spoonful is substantial. A gentle simmer brings the tomatoes, potatoes and greens together into a rich, savory broth accented by bay and a touch of crushed red pepper for warmth. The recipe stands out for its balance of textures—creamy beans, tender root vegetables and al dente pasta—plus the ability to swap seasonal vegetables without losing its character. It’s designed to be easy to scale, reheats well, and finishes with grated cheese for a silky, savory lift.</p>
                     <div class="recipe-section">
                         <h4>Ingredients:</h4>
                         <ul>
-                            <li>8 oz rice noodles</li>
-                            <li>2 cups mixed vegetables (carrots, bell peppers, snap peas)</li>
-                            <li>3 eggs, beaten</li>
-                            <li>3 tbsp tamarind paste</li>
-                            <li>2 tbsp soy sauce</li>
-                            <li>2 tbsp brown sugar</li>
-                            <li>1/4 cup peanuts, crushed</li>
-                            <li>Bean sprouts and lime wedges for serving</li>
-                            <li>Scallions and cilantro for garnish</li>
+                            <li>4 ounces pancetta, cut into 1/8-inch pieces</li>
+                            <li>15-ounce can cannellini beans with liquid</li>
+                            <li>4 cups curly kale leaves, torn</li>
+                            <li>3 large carrots, cut into 1/2-inch pieces</li>
+                            <li>12 ounces Yukon potatoes, quartered</li>
+                            <li>2 celery stalks, cut into 1/2-inch pieces</li>
+                            <li>3 garlic cloves, finely grated</li>
+                            <li>1 large zucchini, cut into 1/2-inch pieces</li>
+                            <li>1 medium yellow onion, chopped</li>
+                            <li>1/2 cup dry ditalini or other small pasta shape</li>
+                            <li>14-ounce can whole peeled tomatoes, crushed</li>
+                            <li>Parmesan cheese, grated, for serving</li>
+                            <li>3 tablespoons olive oil</li>
+                            <li>2 bay leaves</li>
+                            <li>Kosher salt and freshly ground black pepper</li>
+                            <li>1/4 teaspoon crushed red pepper flakes</li>
                         </ul>
                     </div>
                     <div class="recipe-section">
                         <h4>Instructions:</h4>
                         <ol>
-                            <li>Soak rice noodles in warm water for 30 minutes, then drain</li>
-                            <li>Mix tamarind paste, soy sauce, and brown sugar for the sauce</li>
-                            <li>Heat oil in a wok and scramble eggs, set aside</li>
-                            <li>Stir-fry vegetables until crisp-tender</li>
-                            <li>Add noodles and sauce, toss until noodles are coated</li>
-                            <li>Add scrambled eggs and toss to combine</li>
-                            <li>Serve topped with peanuts, bean sprouts, scallions, and lime wedges</li>
+                            <li>Prep: Rinse kale and vegetables under cold running water. Dry kale and tear into bite-size pieces; chop onion, carrots, celery, zucchini and quarter potatoes. Keep perishable ingredients refrigerated until use.</li>
+                            <li>Heat a 4- to 6-quart Dutch oven or heavy pot over medium heat. Add pancetta and 1 tablespoon olive oil. Render pancetta, stirring occasionally, 5–7 minutes until fat is released and pieces are lightly browned. Remove half the pancetta to a small bowl and reserve.</li>
+                            <li>Increase heat to medium-high, add remaining 2 tablespoons olive oil if needed, then add chopped onion, celery and carrots. Sweat vegetables 6–8 minutes until softened and translucent; do not brown. Season lightly with kosher salt.</li>
+                            <li>Add grated garlic and crushed red pepper flakes; stir 30 seconds until fragrant.</li>
+                            <li>Pour in crushed tomatoes and the entire can of cannellini beans with their liquid. Add bay leaves and bring mixture to a gentle boil over medium-high heat, stirring to combine and scrape up any brown bits.</li>
+                            <li>Add quartered potatoes. Reduce heat to medium-low to maintain a gentle simmer (liquid should bubble gently, not boil vigorously). Partially cover and simmer 12–15 minutes, stirring once or twice, until potatoes begin to become tender.</li>
+                            <li>Add zucchini and dry ditalini to the pot. Continue simmering, uncovered or partially covered, 8–10 minutes until pasta is al dente and potatoes are fully tender. Total simmer time for potatoes should be about 20–25 minutes depending on size.</li>
+                            <li>Stir in torn kale and reserved pancetta. Simmer 3–5 minutes until kale wilts but remains bright and tender. Taste and adjust seasoning with kosher salt and freshly ground black pepper.</li>
+                            <li>Finish: Remove and discard bay leaves. Let soup rest 2–3 minutes off heat to thicken slightly. Ladle into bowls and serve with grated Parmesan. Pass additional salt and pepper at the table.</li>
+                            <li>Storage and food safety: Cool leftovers within 2 hours and refrigerate at 40°F (4°C) or below. Consume refrigerated leftovers within 3–4 days. Reheat to an internal temperature of 165°F (74°C) before serving. If freezing, cool completely and freeze in airtight containers for up to 3 months.</li>
                         </ol>
                     </div>
                 </div>
             </div>
+
         </div>
-    </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Rowdy Media, LLC. All rights reserved.</p>
