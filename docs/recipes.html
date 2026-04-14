@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Meal Maker 3000</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .loading-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-pink);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .error-message {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+        .category-heading {
+            font-family: 'Markazi Text', serif;
+            font-size: 2.2rem;
+            color: var(--text);
+            margin-top: 3rem;
+            margin-bottom: 0.25rem;
+            text-transform: capitalize;
+        }
+        .category-heading:first-child {
+            margin-top: 0;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 2rem;
+        }
+        .cta-section h2 {
+            font-family: 'Markazi Text', serif;
+            font-size: 2.4rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .recipe-card {
+            cursor: pointer;
+        }
+
+        .recipe-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 8, 26, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 1000;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+            animation: fade-in 0.2s ease;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .recipe-modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            max-width: 720px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: var(--glow-pink);
+            position: relative;
+            animation: slide-up 0.25s ease;
+        }
+        @keyframes slide-up {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .recipe-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(8, 8, 26, 0.8);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+            z-index: 2;
+        }
+        .recipe-modal-close:hover {
+            background: var(--accent-pink);
+            border-color: var(--accent-pink);
+        }
+        .recipe-modal-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .recipe-modal-body {
+            padding: 2rem;
+        }
+        .recipe-modal-body h2 {
+            font-family: 'Markazi Text', serif;
+            font-size: 2.4rem;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .recipe-modal-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        .recipe-modal-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .recipe-modal-section {
+            margin-bottom: 2rem;
+        }
+        .recipe-modal-section h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-pink);
+            margin-bottom: 0.75rem;
+        }
+        .recipe-modal-section ul,
+        .recipe-modal-section ol {
+            padding-left: 1.25rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .recipe-modal-section li {
+            margin-bottom: 0.4rem;
+        }
+        .recipe-modal-section ol li {
+            padding-left: 0.5rem;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        @media (max-width: 600px) {
+            .recipe-modal-img { height: 220px; }
+            .recipe-modal-body { padding: 1.5rem; }
+            .recipe-modal-body h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="apps.html">Apps</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Recipes</h1>
+        <p>Browse recipes from Meal Maker 3000</p>
+    </div>
+
+    <section class="cta-section" id="cta">
+        <h2>Create Your Own Recipes</h2>
+        <p>
+            With Meal Maker 3000, you can create your own custom recipes:
+            just describe what you're in the mood for and the app creates a complete
+            recipe with ingredients and step-by-step instructions.
+        </p>
+        <a href="https://apps.apple.com/us/app/meal-maker-3000/id6760728636" class="hero-cta">&#x2665; Download on the App Store</a>
+    </section>
+
+    <section class="recipes-section" id="recipes-container">
+        <div class="loading-container" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading recipes&hellip;</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Rowdy Media, LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function () {
+            var API_URL = 'https://viqimby9ja.execute-api.us-east-2.amazonaws.com/api/public/suggestions';
+            var container = document.getElementById('recipes-container');
+            var loading = document.getElementById('loading');
+
+            var CATEGORY_LABELS = {
+                QUICK: 'Quick Meals',
+                MAINS: 'Main Courses',
+                SIDES: 'Sides',
+                VEGGIE: 'Vegetarian',
+                SALAD: 'Salads',
+                DESSERT: 'Desserts',
+                BREAKFAST: 'Breakfast'
+            };
+
+            var recipeIndex = {};
+
+            function escapeHtml(str) {
+                var div = document.createElement('div');
+                div.textContent = str == null ? '' : String(str);
+                return div.innerHTML;
+            }
+
+            function renderRecipeCard(recipe) {
+                var img = recipe.thumbnailURI || recipe.imageURI || '';
+                var imgHtml = '';
+                if (img && typeof img === 'string' && img.indexOf('blank-image') === -1) {
+                    imgHtml = '<img class="recipe-card-img" src="' + escapeHtml(img) + '" alt="' + escapeHtml(recipe.title) + '" loading="lazy">';
+                }
+
+                var meta = [];
+                if (recipe.time) meta.push(recipe.time + ' min');
+                if (recipe.yield) meta.push(escapeHtml(recipe.yield));
+
+                var metaHtml = meta.length
+                    ? '<div class="recipe-meta">' + meta.map(function (m) { return '<span>' + m + '</span>'; }).join('') + '</div>'
+                    : '';
+
+                var desc = recipe.description
+                    ? '<p>' + escapeHtml(recipe.description.length > 160 ? recipe.description.slice(0, 160) + '...' : recipe.description) + '</p>'
+                    : '';
+
+                return '<div class="recipe-card" data-recipe-id="' + escapeHtml(recipe.recipeID) + '" role="button" tabindex="0" aria-label="View recipe: ' + escapeHtml(recipe.title) + '">'
+                    + imgHtml
+                    + '<div class="recipe-card-content">'
+                    + '<h3>' + escapeHtml(recipe.title) + '</h3>'
+                    + metaHtml
+                    + desc
+                    + '</div></div>';
+            }
+
+            function openRecipeModal(recipe) {
+                var img = recipe.imageURI || recipe.thumbnailURI || '';
+                var imgHtml = '';
+                if (img && typeof img === 'string' && img.indexOf('blank-image') === -1) {
+                    imgHtml = '<img class="recipe-modal-img" src="' + escapeHtml(img) + '" alt="' + escapeHtml(recipe.title) + '">';
+                }
+
+                var meta = [];
+                if (recipe.time) meta.push('<span>&#x23F1; ' + recipe.time + ' min</span>');
+                if (recipe.yield) meta.push('<span>&#x1F37D; ' + escapeHtml(recipe.yield) + '</span>');
+                var metaHtml = meta.length ? '<div class="recipe-modal-meta">' + meta.join('') + '</div>' : '';
+
+                var descHtml = recipe.description
+                    ? '<p class="recipe-modal-description">' + escapeHtml(recipe.description) + '</p>'
+                    : '';
+
+                var ingredientsHtml = '';
+                if (Array.isArray(recipe.ingredientDescriptions) && recipe.ingredientDescriptions.length) {
+                    ingredientsHtml = '<div class="recipe-modal-section"><h3>Ingredients</h3><ul>'
+                        + recipe.ingredientDescriptions.map(function (ing) { return '<li>' + escapeHtml(ing) + '</li>'; }).join('')
+                        + '</ul></div>';
+                }
+
+                var instructionsHtml = '';
+                if (Array.isArray(recipe.instructionSteps) && recipe.instructionSteps.length) {
+                    instructionsHtml = '<div class="recipe-modal-section"><h3>Instructions</h3><ol>'
+                        + recipe.instructionSteps.map(function (step) { return '<li>' + escapeHtml(step) + '</li>'; }).join('')
+                        + '</ol></div>';
+                }
+
+                var overlay = document.createElement('div');
+                overlay.className = 'recipe-modal-overlay';
+                overlay.innerHTML = '<div class="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="recipe-modal-title">'
+                    + '<button class="recipe-modal-close" aria-label="Close">&times;</button>'
+                    + imgHtml
+                    + '<div class="recipe-modal-body">'
+                    + '<h2 id="recipe-modal-title">' + escapeHtml(recipe.title) + '</h2>'
+                    + metaHtml
+                    + descHtml
+                    + ingredientsHtml
+                    + instructionsHtml
+                    + '</div></div>';
+
+                document.body.appendChild(overlay);
+                document.body.classList.add('modal-open');
+
+                function close() {
+                    overlay.remove();
+                    document.body.classList.remove('modal-open');
+                    document.removeEventListener('keydown', onKeydown);
+                }
+                function onKeydown(e) {
+                    if (e.key === 'Escape') close();
+                }
+
+                overlay.addEventListener('click', function (e) {
+                    if (e.target === overlay) close();
+                });
+                overlay.querySelector('.recipe-modal-close').addEventListener('click', close);
+                document.addEventListener('keydown', onKeydown);
+            }
+
+            container.addEventListener('click', function (e) {
+                var card = e.target.closest('.recipe-card');
+                if (!card) return;
+                var recipe = recipeIndex[card.getAttribute('data-recipe-id')];
+                if (recipe) openRecipeModal(recipe);
+            });
+
+            container.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                var card = e.target.closest('.recipe-card');
+                if (!card) return;
+                e.preventDefault();
+                var recipe = recipeIndex[card.getAttribute('data-recipe-id')];
+                if (recipe) openRecipeModal(recipe);
+            });
+
+            fetch(API_URL)
+                .then(function (res) {
+                    if (!res.ok) throw new Error('Failed to load recipes');
+                    return res.json();
+                })
+                .then(function (categories) {
+                    loading.remove();
+                    var html = '';
+
+                    categories.forEach(function (group) {
+                        if (!group.recipes || group.recipes.length === 0) return;
+                        var label = CATEGORY_LABELS[group.category] || group.category;
+                        html += '<h2 class="category-heading">' + escapeHtml(label) + '</h2>';
+                        html += '<div class="recipes-grid">';
+                        group.recipes.forEach(function (recipe) {
+                            if (recipe.recipeID) {
+                                recipeIndex[recipe.recipeID] = recipe;
+                            }
+                            html += renderRecipeCard(recipe);
+                        });
+                        html += '</div>';
+                    });
+
+                    if (!html) {
+                        container.innerHTML = '<div class="error-message"><p>No recipes available right now. Check back soon!</p></div>';
+                    } else {
+                        container.innerHTML = html;
+                    }
+                })
+                .catch(function () {
+                    loading.remove();
+                    container.innerHTML = '<div class="error-message"><p>Unable to load recipes. Please try again later.</p></div>';
+                });
+        })();
+    </script>
+</body>
+</html>
