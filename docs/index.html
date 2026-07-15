@@ -9,44 +9,106 @@
 <body>
     <nav>
         <ul>
+            <li><a href="index.html">Rowdy</a></li>
+            <li><a href="games.html">Games</a></li>
             <li><a href="apps.html">Apps</a></li>
-            <li><a href="recipes.html">Recipes</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="index.html">About</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </nav>
 
-    <div class="page-hero">
-        <h1>Rowdy Media</h1>
-        <p>Creating the next generation of digital media.</p>
-    </div>
+    <section class="landing-hero">
+        <img class="landing-hero-img" src="rowdy.png" alt="Rowdy Media">
+    </section>
 
-    <div class="container">
-        <div class="about">
-            <h2>About Us</h2>
-            <p>
-                Rowdy Media, LLC is a digital media company focused on creating innovative applications
-                that enhance everyday experiences. We combine cutting-edge technology with thoughtful
-                design to build products that people love to use.
-            </p>
-            <p style="margin-top: 1rem;">
-                Our mission is to empower users through intuitive, powerful digital solutions that solve
-                real-world problems. We believe in the transformative power of technology when it's
-                accessible, beautiful, and genuinely useful.
-            </p>
-            <p style="margin-top: 1rem;">
-                Our flagship product is Meal Maker 3000, an AI assisted meal prep and recipe app that helps people discover and create amazing meals.
-            </p>
+    <section class="carousel" id="carousel" aria-label="Featured Rowdy Media products">
+        <div class="carousel-track" id="carousel-track">
+            <a class="carousel-slide" href="games.html">
+                <img src="screenshots/hextactics/title.png" alt="Hextactics Heroes">
+                <div class="carousel-slide-content">
+                    <h3>Hextactics Heroes</h3>
+                    <p>Turn-based tactics roguelike</p>
+                </div>
+            </a>
+            <a class="carousel-slide" href="apps.html">
+                <img src="screenshots/feed.png" alt="Meal Maker 3000">
+                <div class="carousel-slide-content">
+                    <h3>Meal Maker 3000</h3>
+                    <p>AI-assisted meal prep &amp; recipes</p>
+                </div>
+            </a>
         </div>
-
-        <div class="about" style="margin-top: 2rem;">
-            <h2>Legal</h2>
-            <p><a href="privacy.html" style="color: var(--accent-pink); text-decoration: none;">Privacy Policy</a></p>
-        </div>
-    </div>
+        <button class="carousel-arrow carousel-arrow-prev" id="carousel-prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-arrow carousel-arrow-next" id="carousel-next" aria-label="Next slide">&#10095;</button>
+        <div class="carousel-dots" id="carousel-dots"></div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Rowdy Media, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        (function () {
+            var track = document.getElementById('carousel-track');
+            var slides = Array.prototype.slice.call(track.children);
+            var dotsContainer = document.getElementById('carousel-dots');
+            var prevBtn = document.getElementById('carousel-prev');
+            var nextBtn = document.getElementById('carousel-next');
+            var carousel = document.getElementById('carousel');
+            var current = 0;
+            var intervalId = null;
+            var AUTO_ADVANCE_MS = 5000;
+
+            slides.forEach(function (_, i) {
+                var dot = document.createElement('button');
+                dot.className = 'carousel-dot';
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dot.addEventListener('click', function () {
+                    goTo(i);
+                    restart();
+                });
+                dotsContainer.appendChild(dot);
+            });
+            var dots = Array.prototype.slice.call(dotsContainer.children);
+
+            function update() {
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === current);
+                });
+            }
+
+            function goTo(index) {
+                current = (index + slides.length) % slides.length;
+                update();
+            }
+
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+
+            function start() {
+                intervalId = setInterval(next, AUTO_ADVANCE_MS);
+            }
+
+            function stop() {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            }
+
+            function restart() {
+                stop();
+                start();
+            }
+
+            nextBtn.addEventListener('click', function () { next(); restart(); });
+            prevBtn.addEventListener('click', function () { prev(); restart(); });
+            carousel.addEventListener('mouseenter', stop);
+            carousel.addEventListener('mouseleave', start);
+
+            update();
+            start();
+        })();
+    </script>
 </body>
 </html>
