@@ -931,7 +931,6 @@ footer p {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: calc(50% + 2px) calc(50% + 2px);
     border: 2px solid var(--border);
     box-shadow: var(--glow-pink);
     flex-shrink: 0;
